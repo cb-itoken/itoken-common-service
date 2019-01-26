@@ -13,7 +13,7 @@ import java.util.Date;
 
 @Service
 @Transactional(readOnly = true)
-public class BaseServiceImpl<T extends BaseDomain, D extends MyMapper<T>> implements BaseService<T> {
+public abstract class BaseServiceImpl<T extends BaseDomain, D extends MyMapper<T>> implements BaseService<T> {
 
     @Autowired
     private D dao;
@@ -23,6 +23,8 @@ public class BaseServiceImpl<T extends BaseDomain, D extends MyMapper<T>> implem
     public int insert(T t, String createBy) {
         t.setCreateBy(createBy);
         t.setCreateDate(new Date());
+        t.setUpdateBy(createBy);
+        t.setUpdateDate(new Date());
         return dao.insert(t);
     }
 
