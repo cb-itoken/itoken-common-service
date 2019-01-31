@@ -47,5 +47,11 @@
             <!-- mysql 配置 -->
             <generatedKey column="post_guid" sqlStatement="Mysql" identity="false"/>
         </table>
+
+        <!-- itoken-service-digiccy -->
+        <table catalog="itoken-service-digiccy" tableName="tb_digiccy_exchange">
+            <!-- mysql 配置 -->
+            <generatedKey column="exch_guid" sqlStatement="Mysql" identity="false"/>
+        </table>
     </context>
 </generatorConfiguration>
